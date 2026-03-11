@@ -1,0 +1,17 @@
+[project]
+name = "gmsh-stubs"
+version = "4.15.1"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "Will Zhang", email = "willwz@umich.edu" }]
+requires-python = ">=3.14"
+dependencies = ["gmsh=4.15.1", "optype[numpy]"]
+license = { file = "LICENSE" }
+
+
+[build-system]
+requires = ["uv_build>=0.10.4,<0.11.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
