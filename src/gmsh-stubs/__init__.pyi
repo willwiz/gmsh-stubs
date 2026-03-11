@@ -33,7 +33,9 @@ type _ElemType_ = int
 type _FACE_TYPE_ = int
 type _FuncSpace_ = str
 type _Int1D_ = list[int]
+type _Int2D_ = list[list[int]]
 type _Float1D_ = list[float]
+type _Float2D_ = list[list[float]]
 type _String1D_ = list[str]
 
 def initialize(
@@ -284,9 +286,7 @@ class model:
         @staticmethod
         def relocate_nodes(dim: _DIM_ = -1, tag: _TAG_ = -1) -> None: ...
         @staticmethod
-        def get_elements(
-            dim: _DIM_ = -1, tag: _TAG_ = -1
-        ) -> tuple[_Int1D_, list[_Int1D_], list[_Int1D_]]: ...
+        def get_elements(dim: _DIM_ = -1, tag: _TAG_ = -1) -> tuple[_Int1D_, _Int2D_, _Int2D_]: ...
         @staticmethod
         def get_element(elementTag: _Size_) -> tuple[_ElemType_, _Int1D_, _DIM_, _TAG_]: ...
         @staticmethod
@@ -1159,9 +1159,9 @@ class model:
             dim: _DIM_, tag: _TAG_
         ) -> tuple[float, float, float, float, float, float]: ...
         @staticmethod
-        def get_curve_loops(surfaceTag: _TAG_) -> tuple[_Int1D_, list[_Int1D_]]: ...
+        def get_curve_loops(surfaceTag: _TAG_) -> tuple[_Int1D_, _Int2D_]: ...
         @staticmethod
-        def get_surface_loops(volumeTag: _TAG_) -> tuple[_Int1D_, list[_Int1D_]]: ...
+        def get_surface_loops(volumeTag: _TAG_) -> tuple[_Int1D_, _Int2D_]: ...
         @staticmethod
         def get_mass(dim: _DIM_, tag: _TAG_) -> float: ...
         @staticmethod
@@ -1212,9 +1212,7 @@ class view:
         partition: int = 0,
     ) -> None: ...
     @staticmethod
-    def get_model_data(
-        tag: _TAG_, step: _Size_
-    ) -> tuple[str, _Int1D_, list[_Float1D_], float, int]: ...
+    def get_model_data(tag: _TAG_, step: _Size_) -> tuple[str, _Int1D_, _Float2D_, float, int]: ...
     @staticmethod
     def get_homogeneous_model_data(
         tag: _TAG_, step: int
@@ -1224,7 +1222,7 @@ class view:
     @staticmethod
     def get_list_data(
         tag: _TAG_, returnAdaptive: bool = False
-    ) -> tuple[_String1D_, _Int1D_, list[_Float1D_]]: ...
+    ) -> tuple[_String1D_, _Int1D_, _Float2D_]: ...
     @staticmethod
     def add_list_data_string(
         tag: _TAG_, coord: _VectorFloat_, data: _VectorString_, style: _VectorString_ = []
