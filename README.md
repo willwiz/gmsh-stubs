@@ -1,6 +1,6 @@
 # gmsh-stubs
 
-Basic type stubs for [gmsh](https://gitlab.onelab.info/gmsh/gmsh)'s Python API.
+Basic type stubs for [gmsh](https://gitlab.onelab.info/gmsh/gmsh)'s Python API based on docstrings.
 
 ## Features
 
@@ -19,4 +19,4 @@ pip install ./gmsh-stubs
 
 ## Other info
 
-I'm lazy, and might update when I use gmsh next time
+May update for specific methods
