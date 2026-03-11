@@ -5,7 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 authors = [{ name = "Will Zhang", email = "willwz@umich.edu" }]
 requires-python = ">=3.14"
-dependencies = ["gmsh=4.15.1", "optype[numpy]"]
+dependencies = ["gmsh==4.15.1", "optype[numpy]"]
 license = { file = "LICENSE" }
 
 
