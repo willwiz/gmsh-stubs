@@ -815,7 +815,7 @@ class model:
             angle2: float = ...,
             zAxis: _VectorFloat_ = [],
             xAxis: _VectorFloat_ = [],
-        ) -> _API_RESULT_: ...
+        ) -> _TAG_: ...
         @staticmethod
         def add_spline(
             pointTags: _VectorInt_, tag: _TAG_ = -1, tangents: _VectorFloat_ = []
