@@ -11,7 +11,6 @@
 
 # The Python API is entirely defined in the `gmsh.py' module (which contains the
 # full documentation of all the functions in the API):
-from typing import reveal_type
 
 import gmsh
 
@@ -30,13 +29,11 @@ gmsh.model.geo.add_line(3, 4, 3)
 gmsh.model.geo.add_line(4, 1, 4)
 gmsh.model.geo.add_curve_loop([4, 1, -2, 3], 1)
 res = gmsh.model.geo.add_plane_surface([1], 1)
-print(res)
-reveal_type(res)
+
 # We change the mesh size to generate a coarser mesh
 lc = lc * 4
 res = gmsh.model.geo.mesh.set_size([(0, 1), (0, 2), (0, 3), (0, 4)], lc)
-print(res)
-reveal_type(res)
+
 # We define a new point
 gmsh.model.geo.add_point(0.02, 0.02, 0.0, lc, 5)
 
@@ -46,8 +43,7 @@ gmsh.model.geo.synchronize()
 # One can force this point to be included ("embedded") in the 2D mesh, using the
 # `embed()' function:
 res = gmsh.model.mesh.embed(0, [5], 2, 1)
-print(res)
-reveal_type(res)
+
 
 # In the same way, one can use `embed()' to force a curve to be embedded in the
 # 2D mesh:
@@ -60,8 +56,6 @@ gmsh.model.mesh.embed(1, [5], 2, 1)
 
 # Points and curves can also be embedded in volumes
 res = gmsh.model.geo.extrude([(2, 1)], 0, 0, 0.1)
-print(res)
-reveal_type(res)
 
 
 p = gmsh.model.geo.add_point(0.07, 0.15, 0.025, lc)

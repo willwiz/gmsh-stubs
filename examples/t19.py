@@ -12,7 +12,6 @@
 # The Python API is entirely defined in the `gmsh.py' module (which contains the
 # full documentation of all the functions in the API):
 import math
-from typing import reveal_type
 
 import gmsh
 
@@ -23,8 +22,6 @@ gmsh.model.add("t19")
 # Volumes can be constructed from (closed) curve loops thanks to the
 # `addThruSections()' function
 res = gmsh.model.occ.add_circle(0, 0, 0, 0.5, 1)
-print(res)
-reveal_type(res)
 gmsh.model.occ.add_curve_loop([1], 1)
 gmsh.model.occ.add_circle(0.1, 0.05, 1, 0.1, 2)
 gmsh.model.occ.add_curve_loop([2], 2)

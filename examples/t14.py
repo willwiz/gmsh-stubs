@@ -11,7 +11,6 @@
 
 # The Python API is entirely defined in the `gmsh.py' module (which contains the
 # full documentation of all the functions in the API):
-from typing import reveal_type
 
 import gmsh
 
@@ -80,8 +79,6 @@ gmsh.model.add_physical_group(2, terminal_tags, terminals_physical_tag, "Termina
 
 # Find domain boundary tags
 boundary_dimtags = gmsh.model.get_boundary([(3, domain_tag)], combined=False, oriented=False)
-print(boundary_dimtags)
-reveal_type(boundary_dimtags)
 boundary_tags: list[int] = []
 complement_tags: list[int] = []
 for tag in boundary_dimtags:

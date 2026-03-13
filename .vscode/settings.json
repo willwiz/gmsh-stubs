@@ -1,0 +1,30 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true
+    },
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.importFormat": "absolute",
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingTypeStubs": "none",
+    },
+    "python.analysis.enablePytestSupport": false,
+    "python.analysis.exclude": [
+        "**/build",
+        "${workspaceFolder}.venv",
+        "${workspaceFolder}/.git",
+        "**/node_modules",
+        "**/__pycache__",
+        "**/.*",
+        ".venv",
+        "**/*.D"
+    ],
+    "search.exclude": {
+        "**/*.D": true,
+        "**/*.vtu": true,
+        "**/*.log": true,
+    },
+}
