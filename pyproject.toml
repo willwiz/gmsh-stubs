@@ -1,6 +1,6 @@
 [project]
 name = "gmsh-stubs"
-version = "4.15.1"
+version = "4.15.2"
 description = "Add your description here"
 readme = "README.md"
 authors = [{ name = "Will Zhang", email = "willwz@umich.edu" }]
@@ -9,7 +9,7 @@ dependencies = ["optype[numpy]"]
 license = { file = "LICENSE" }
 
 [project.optional-dependencies]
-gmsh = ["gmsh==4.15.1"]
+gmsh = ["gmsh==4.15.2"]
 
 [build-system]
 requires = ["uv_build>=0.10.4,<0.11.0"]
