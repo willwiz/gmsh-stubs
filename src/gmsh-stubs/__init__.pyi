@@ -36,9 +36,9 @@ type _ElemType_ = int
 type _FACE_TYPE_ = int
 type _FuncSpace_ = str
 type _Int1D_[I: np.integer = np.intp] = np.ndarray[tuple[int], np.dtype[I]]
-type _Int2D_[I: np.integer = np.intp] = np.ndarray[tuple[int, int], np.dtype[I]]
+type _Int2D_[I: np.integer = np.intp] = list[_Int1D_[I]]
 type _Float1D_[F: np.floating = np.float64] = np.ndarray[tuple[int], np.dtype[F]]
-type _Float2D_[F: np.floating = np.float64] = np.ndarray[tuple[int, int], np.dtype[F]]
+type _Float2D_[F: np.floating = np.float64] = list[_Float1D_[F]]
 type _String1D_ = np.ndarray[tuple[int, int], np.dtype[np.str_]]
 
 def initialize(
