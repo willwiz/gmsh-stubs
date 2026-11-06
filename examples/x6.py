@@ -3,8 +3,12 @@
 # ///
 
 import sys
+from typing import TYPE_CHECKING
 
 import gmsh
+
+if TYPE_CHECKING:
+    from collections.abc import Collection
 
 gmsh.initialize(sys.argv)
 
@@ -24,7 +28,7 @@ interpolation_order = 2
 gmsh.model.mesh.set_order(element_order)
 
 
-def pp(label: str, v: list[float], mult: float) -> None:
+def pp(label: str, v: Collection[float], mult: float) -> None:
     print(" * " + str(len(v) / mult) + " " + label + ": " + str(v))
 
 

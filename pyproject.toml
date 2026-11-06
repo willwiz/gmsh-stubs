@@ -9,11 +9,14 @@ dependencies = ["optype[numpy]"]
 license = { file = "LICENSE" }
 
 [project.optional-dependencies]
-gmsh = ["gmsh==4.15.2"]
+gmsh = ["gmsh>=4.15.2"]
 
 [build-system]
-requires = ["uv_build>=0.10.4,<0.11.0"]
+requires = ["uv_build>=0.10.4,<0.14.0"]
 build-backend = "uv_build"
 
 [tool.ruff]
 line-length = 100
+
+[dependency-groups]
+dev = ["gmsh>=4.15.2"]
